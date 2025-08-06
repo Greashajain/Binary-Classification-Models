@@ -1,61 +1,77 @@
+# 📊 Binary Classification with Machine Learning | Titanic Survival Prediction
 
-# 📊 Binary Classification with Machine Learning | Model Comparison
-
-This project presents a comprehensive comparison of multiple supervised learning algorithms for binary classification using a real-world passenger dataset. The implementation covers data preprocessing, model training, and performance evaluation, all executed within a Google Colab environment using Python and scikit-learn.
+This project compares multiple supervised learning algorithms for binary classification using the Titanic dataset. It covers **data preprocessing**, **model training**, **evaluation**, and **cross-validation**, all implemented in Python within Google Colab.
 
 ---
 
 ## 🛠️ Tech Stack
-
-- **Language**: Python 3  
-- **Frameworks/Libraries**: scikit-learn, pandas, numpy, seaborn, matplotlib  
-- **Platform**: Google Colab  
+- **Language:** Python 3  
+- **Libraries:** scikit-learn, pandas, numpy, seaborn, matplotlib  
+- **Platform:** Google Colab  
 
 ---
 
 ## 📂 Project Structure
-
-| File                            | Description                                          |
-|---------------------------------|------------------------------------------------------|
-| `custom_ml_classifier.ipynb`    | Core notebook containing data processing, model training, and evaluation |
-| `README.md`                     | Project overview and documentation                   |
+| File | Description |
+|------|-------------|
+| `Clasification.ipynb` | Core notebook containing data preprocessing, model training, evaluation, and cross-validation |
+| `README.md` | Project overview and documentation |
 
 ---
 
 ## 🔄 Workflow Overview
 
-1. **Data Preprocessing**  
-   - Handling missing values  
-   - Encoding categorical features  
-   - Feature scaling using `StandardScaler`  
-
-2. **Model Training & Evaluation**  
-   - Train-test split  
-   - Training 5 machine learning models  
-   - Comparing performance metrics  
-
-3. **Performance Analysis**  
-   - Accuracy Score  
-   - Confusion Matrix  
-   - Classification Report  
+### **1. Data Preprocessing**
+- Loaded Titanic dataset from `seaborn`
+- Dropped irrelevant columns: `deck`, `embark_town`, `alive`, `class`, `who`, `adult_male`
+- Handled missing values:
+  - Filled `age` with mean
+  - Dropped rows with missing `embarked`
+- Encoded categorical variables (`sex`, `embarked`) using **Label Encoding**
+- Converted all features to integers for model compatibility
+- Applied **StandardScaler** for feature scaling (required for KNN, SVM, Decision Tree)
 
 ---
 
-## 🤖 Models Implemented
-
+### **2. Models Implemented**
 - Logistic Regression  
 - K-Nearest Neighbors (KNN)  
+- Gaussian Naive Bayes (GNB)  
 - Decision Tree Classifier  
-- Random Forest Classifier  
-- Support Vector Machine (SVM)  
+- Support Vector Machine (SVM - Linear Kernel)  
 
 ---
 
-## 📈 Example Outputs
+### **3. Model Training & Evaluation**
+- **Train-Test Split:** 80% training, 20% testing  
+- Evaluation Metrics:
+  - Accuracy Score
+  - Confusion Matrix
+  - Classification Report (Precision, Recall, F1-Score)
 
-- Accuracy comparison across models  
-- Confusion matrices for all classifiers  
-- Classification reports including precision, recall, and F1-score  
+---
+
+### **4. Cross-Validation**
+- Applied **5-fold Cross-Validation** for:
+  - SVM (Linear Kernel)
+  - KNN
+- Reported mean accuracy from cross-validation
+
+---
+
+## 📈 Results Summary
+
+| Model                  | Accuracy | Precision (Class 1) | Recall (Class 1) | F1-Score (Class 1) |
+|------------------------|----------|---------------------|------------------|--------------------|
+| Logistic Regression    | 0.803    | 0.74                 | 0.77             | 0.75               |
+| KNN                    | 0.792    | 0.72                 | 0.75             | 0.74               |
+| Gaussian Naive Bayes   | 0.803    | 0.74                 | 0.77             | 0.75               |
+| Decision Tree          | 0.803    | 0.74                 | 0.77             | 0.75               |
+| SVM (Linear Kernel)    | 0.803    | 0.74                 | 0.77             | 0.75               |
+
+**Cross-Validation Mean Accuracy:**
+- SVM: ~0.787  
+- KNN: ~0.799  
 
 
 
