@@ -5,7 +5,7 @@ This project compares multiple supervised learning algorithms for binary classif
 ---
 
 ## 🛠️ Tech Stack
-- **Language:** Python  
+- **Language:** Python 3
 - **Libraries:** scikit-learn, pandas, numpy, seaborn, matplotlib  
 - **Platform:** Google Colab  
 
