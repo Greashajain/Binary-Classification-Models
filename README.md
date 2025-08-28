@@ -2,7 +2,7 @@
 
 This project compares multiple supervised learning algorithms for binary classification using the Titanic dataset. It covers **data preprocessing**, **model training**, **evaluation**, and **cross-validation**, all implemented in Python within Google Colab.
 
----
+--- 
 
 ## 🛠️ Tech Stack
 - **Language:** Python 3
